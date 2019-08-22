@@ -165,13 +165,13 @@ workflows:
             - unit-tests
           filters:
             branches:
-              only: master
+              only: new-dev
       - deploy:
           requires:
             - package
           filters:
             branches:
-              only: master
+              only: new-dev
 
   wf-publish:
     jobs:
@@ -181,10 +181,10 @@ workflows:
             - unit-tests
           filters:
             branches:
-              only: master
+              only: new-dev
       - publish:
           requires:
             - package
           filters:
             branches:
-              only: master
+              only: new-dev
